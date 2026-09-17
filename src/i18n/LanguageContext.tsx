@@ -4,7 +4,7 @@ import { locales, strings, type Locale, type Strings } from './translations'
 const STORAGE_KEY = 'cw-lang'
 
 function isLocale(value: string | null): value is Locale {
-  return value === 'en' || value === 'ru'
+  return value === 'en' || value === 'ru' || value === 'zh'
 }
 
 function detectInitialLocale(): Locale {
@@ -14,7 +14,10 @@ function detectInitialLocale(): Locale {
   } catch {
     // localStorage unavailable (e.g. private browsing) — fall through to browser detection
   }
-  return navigator.language.toLowerCase().startsWith('ru') ? 'ru' : 'en'
+  const lang = navigator.language.toLowerCase()
+  if (lang.startsWith('ru')) return 'ru'
+  if (lang.startsWith('zh')) return 'zh'
+  return 'en'
 }
 
 interface LanguageContextValue {

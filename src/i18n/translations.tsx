@@ -8,7 +8,7 @@ import type {
   TestimonialId,
 } from '../data/site'
 
-export type Locale = 'en' | 'ru'
+export type Locale = 'en' | 'ru' | 'zh'
 
 export interface LocaleInfo {
   code: Locale
@@ -18,6 +18,7 @@ export interface LocaleInfo {
 export const locales: LocaleInfo[] = [
   { code: 'en', label: 'English' },
   { code: 'ru', label: 'Русский' },
+  { code: 'zh', label: '中文' },
 ]
 
 export interface Strings {
@@ -652,4 +653,266 @@ const ru: Strings = {
   languageSwitcher: { label: 'Изменить язык' },
 }
 
-export const strings: Record<Locale, Strings> = { en, ru }
+const zh: Strings = {
+  header: {
+    utilityLinks: ['代理门户', '管理预订', '通勤会员门户'],
+    search: '搜索',
+    bookNow: '立即预订',
+    openMenu: '打开菜单',
+    closeMenu: '关闭菜单',
+    toggleSection: (label) => `展开${label}`,
+  },
+  nav: {
+    experiences: {
+      label: '体验活动',
+      children: [
+        '白思文海滩与山丘湾',
+        '大堡礁探险',
+        'Camira 帆船之旅',
+        '海岛一日游',
+        '艾尔利海滩',
+        '宣传册',
+      ],
+    },
+    reefworld: { label: 'Reefworld', children: ['Reefsleep', 'Reefsuites'] },
+    resortConnections: {
+      label: '度假村接驳',
+      children: [
+        '时刻表',
+        '票价',
+        '出发地点与停车',
+        '行李与货运',
+        '特殊协助',
+        '通勤会员门户',
+        '通勤会员注册',
+      ],
+    },
+    groups: { label: '团体与活动', children: [] },
+    specialOffers: {
+      label: '特别优惠',
+      children: ['Reefsleep 盛大开幕优惠', 'Turtle Club 会员俱乐部', '订阅新闻'],
+    },
+    whitsundays: {
+      label: '圣灵群岛',
+      children: [
+        '白思文海滩与山丘湾',
+        '大堡礁',
+        '帆船探险',
+        '海岛天堂',
+        '艾尔利海滩',
+        '博客',
+      ],
+    },
+    aboutUs: {
+      label: '关于我们',
+      children: [
+        '联系我们',
+        '常见问题',
+        '招聘信息',
+        '环境承诺',
+        '加入旅行俱乐部',
+        '旅游合作伙伴',
+      ],
+    },
+    gifts: { label: '礼品', children: ['礼品商店', '礼品券'] },
+  },
+  hero: {
+    slides: {
+      reefsleepOffer1: {
+        eyebrow: 'Reefsleep 盛大重启优惠',
+        title: '每对情侣 $1,399 起',
+        cta: '了解入住详情',
+      },
+      gbrAdventure: {
+        eyebrow: '大堡礁八折优惠',
+        title: '全天探险之旅',
+        cta: '规划您的海礁之旅',
+      },
+      reefworldReimagined: {
+        eyebrow: 'Reefworld 全新演绎',
+        title: '独家过夜体验',
+        cta: '一探究竟',
+      },
+      hamiltonFreestyle: {
+        eyebrow: '汉密尔顿岛八折优惠',
+        title: 'Freestyle 自由行',
+        cta: '开启海岛时光',
+      },
+      reefsleepOffer2: {
+        eyebrow: 'Reefsleep 盛大重启优惠',
+        title: '每对情侣 $1,399 起',
+        cta: '认识全新的 Reefworld',
+      },
+      reefBeachCombo: {
+        eyebrow: '圣灵群岛终极套餐',
+        title: '海礁与海滩',
+        cta: '慢慢欣赏，尽览全景',
+      },
+      reefsuitesStay: {
+        eyebrow: '大堡礁最尊享的体验',
+        title: '无与伦比的住宿体验',
+        cta: '无与伦比的住宿体验',
+      },
+      whitehavenHalfDay: {
+        eyebrow: '白思文海滩八折优惠',
+        title: '半日巡游',
+        cta: '白思文海滩在等你',
+      },
+    },
+    prevSlide: '上一张',
+    nextSlide: '下一张',
+    goToSlide: (n) => `转到第 ${n} 张幻灯片`,
+  },
+  reefworld: {
+    title: 'Reefworld 全新演绎',
+    subtitle: '大堡礁最尊享的过夜体验',
+    discoverCta: '了解 Reefworld 住宿',
+    imageAlt: '哈迪礁的 Reefworld 浮台',
+    greatBarrierReef: '大堡礁',
+    reefworldName: 'Reefworld',
+    reefsleep: 'Reefsleep',
+    reefsuites: 'Reefsuites',
+    paragraph1: (link) => <>全新开放，一个专属过夜体验的新时代已在{link}的中心地带到来。</>,
+    paragraph2: (link) => (
+      <>
+        {link} 已被重新打造为哈迪礁上一个仅供过夜的专属浮台，让您以更私密、更沉浸的方式，从白天到夜晚体验大堡礁。
+      </>
+    ),
+    paragraph3: (reefsleepLink, reefsuitesLink) => (
+      <>
+        在{reefsleepLink}于星空下入眠，或潜入{reefsuitesLink}——澳大利亚首个水下客房，探索水面之下的世界。
+      </>
+    ),
+    paragraph4:
+      '有限的过夜名额、更宽敞的空间、主厨精心制作的餐点，以及更多放慢脚步、贴近海礁的时光——这是圣灵群岛最难忘的度假体验之一。',
+  },
+  whitsundays: {
+    title: '探索圣灵群岛',
+    subtitle: '关于 Cruise Whitsundays',
+    reefstaysCta: '海礁度假',
+    experiencesCta: '体验活动',
+    resortConnectionsCta: '度假村接驳',
+    imageAlt: '俯瞰圣灵群岛',
+    airlieBeach: '艾尔利海滩',
+    resortConnections: '度假村接驳',
+    greatBarrierReef: '大堡礁',
+    whitehavenBeach: '白思文海滩',
+    hamiltonIsland: '汉密尔顿岛',
+    reefsleep: 'Reefsleep',
+    reefsuites: 'Reefsuites',
+    paragraph1: (airlieLink) => (
+      <>
+        我们扎根于{airlieLink}，深知能以圣灵群岛为家是何等幸运，并致力于向世界各地的游客展示这片非凡地区的精华。
+      </>
+    ),
+    paragraph2: (resortLink, gbrLink, whitehavenLink, hamiltonLink) => (
+      <>
+        我们的{resortLink}、一日巡游及各类活动，能带您前往{gbrLink}、标志性的{whitehavenLink}、备受欢迎的
+        {hamiltonLink}、充满活力的艾尔利海滩，以及沿途的海洋与岛屿。
+      </>
+    ),
+    paragraph3: (reefsleepLink, reefsuitesLink) => (
+      <>
+        我们还提供{reefsleepLink}——在大堡礁外礁星空下度过美妙一夜，以及澳大利亚首个水下客房{reefsuitesLink}。这将是一段令您终生难忘的私密体验。
+      </>
+    ),
+  },
+  acknowledgement: {
+    paragraph1:
+      'Journey Beyond 与 Cruise Whitsundays 谨此致敬圣灵群岛及澳大利亚各地的传统土地拥有者，并承认他们与土地、水域和社区之间延续不断的联系。',
+    paragraph2:
+      '我们向澳大利亚原住民及托雷斯海峡岛民的文化，以及历代、当代与未来的长老们致以敬意，并承诺携手共建更美好的未来。',
+  },
+  experiences: {
+    heading: '精彩体验',
+    prevAria: '上一组体验',
+    nextAria: '下一组体验',
+    viewAll: '查看全部',
+    priceFormat: (price) => `$${price.toLocaleString('zh-CN')} 起/人`,
+    items: {
+      gbrFullDay: '大堡礁全天探险之旅',
+      camiraSailing: 'Camira 帆船探险之旅',
+      whitehavenChillGrill: '白思文海滩与山丘湾休闲烧烤之旅',
+      whitehavenCruise: '白思文海滩上午或下午巡游',
+      reefsuites: 'Reefsuites',
+      reefsleep: 'Reefsleep',
+      whitehavenHamilton: '白思文海滩与汉密尔顿岛之旅',
+      ultimateCombo: '圣灵群岛终极套餐',
+      daydreamIsland: '白日梦岛度假之旅',
+      hamiltonFreestyle: '汉密尔顿岛 Freestyle 自由行',
+      reefSailCombo: '海礁与风帆——圣灵群岛经典组合',
+      reefExploreCombo: '海礁探索组合',
+    },
+  },
+  testimonials: {
+    quotes: {
+      sunshine:
+        '在大堡礁浮潜是一次绝妙的体验，白思文海滩美得令人惊叹！！如果你还在犹豫，直接预订就对了！你绝不会失望',
+      loveTravel:
+        '在海礁上方的星空下入眠，绝对应该列入你的必做清单！难以置信的体验。夜间工作人员个个都很出色。',
+      rachel: '船员非常出色且专业，让我们感到十分安全，也受到了周到的照顾。',
+      sab: '无论是在浮台上还是双体船上，工作人员都非常出色。我们在海礁度过了美妙的一天，强烈推荐这次旅程。',
+    },
+  },
+  instagram: {
+    handle: 'cruisewhitsundays',
+    postsCount: '1,702',
+    postsLabel: '帖子',
+    followersCount: '47,118',
+    followersLabel: '粉丝',
+    loadMore: '加载更多',
+    captions: {
+      heartPontoon: '圣灵群岛，正如大自然本来的模样。',
+      gbrAdventureSept: '九月的大堡礁',
+      whitehavenPov: 'POV：把你的相册交给我们来策划',
+      reefworldAppreciation: '为 Reefworld 打 call',
+      fathersDay: '祝所有了不起的爸爸们父亲节快乐',
+      whitsundaysWaiting: '温馨提醒：圣灵群岛正等着你',
+      reefsleepReimagined: '重新演绎的大堡礁之夜。',
+      reefsuitesGrandReopening: '准备好留宿一晚了吗？盛大开幕优惠火热进行中',
+    },
+  },
+  footer: {
+    newsletterLabel: '订阅以获取最新资讯与优惠',
+    emailSrLabel: '电子邮箱地址',
+    emailPlaceholder: '电子邮箱地址',
+    signup: '订阅',
+    thanks: '感谢您！',
+    addressName: 'Cruise Whitsundays',
+    addressLine1: '24 The Cove Road, Airlie Beach',
+    addressLine2: '（艾尔利港）',
+    addressLine3: '澳大利亚昆士兰州 4802',
+    reservationsLabel: '预订',
+    copyright: (year) => `© ${year} Journey Beyond`,
+    columns: {
+      experiences: {
+        heading: '体验活动',
+        links: ['住宿', '度假村接驳', '特别优惠'],
+      },
+      aboutUs: {
+        heading: '关于我们',
+        links: ['招聘信息', '环境承诺', '条款与条件', '隐私政策'],
+      },
+      contactUs: {
+        heading: '联系我们',
+        links: [
+          '管理预订',
+          '代理预订',
+          '通勤会员门户',
+          '代理体验中心',
+          '媒体专区',
+        ],
+      },
+    },
+  },
+  bookModal: {
+    title: '准备好预订了吗？',
+    subtitle: '请选择您想要预订的项目。',
+    close: '关闭',
+    options: { resortConnections: '度假村接驳', experiences: '体验活动', both: '两者都要' },
+    orCall: '或致电',
+  },
+  languageSwitcher: { label: '切换语言' },
+}
+
+export const strings: Record<Locale, Strings> = { en, ru, zh }
