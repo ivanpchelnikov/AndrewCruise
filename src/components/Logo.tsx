@@ -19,7 +19,7 @@ export default function Logo({ className = '' }: { className?: string }) {
       </svg>
       <span className="font-display leading-none">
         <span className="block text-[15px] font-bold tracking-[0.28em]">CRUISE</span>
-        <span className="block text-[11px] font-semibold tracking-[0.2em]">WHITSUNDAYS</span>
+        <span className="block text-[11px] font-semibold tracking-[0.2em]">ANDREW</span>
       </span>
     </a>
   )
