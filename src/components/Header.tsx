@@ -32,7 +32,7 @@ export default function Header({ onBook }: { onBook: () => void }) {
           scrolled ? 'max-h-0' : 'max-h-24'
         }`}
       >
-        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
           <ul className="hidden items-center gap-8 lg:flex">
             {s.header.utilityLinks.map((l) => (
               <li key={l}>
@@ -42,8 +42,8 @@ export default function Header({ onBook }: { onBook: () => void }) {
               </li>
             ))}
           </ul>
-          <Logo className="lg:absolute lg:left-1/2 lg:-translate-x-1/2" />
-          <div className="hidden items-center gap-8 lg:flex">
+          <Logo className="lg:justify-self-center" />
+          <div className="hidden items-center gap-8 lg:flex lg:justify-self-end">
             <a href="tel:+61748467000" className="label hover:text-teal-brand">
               +61 7 4846 7000
             </a>
